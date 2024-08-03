@@ -1,0 +1,1 @@
+inline block will not take width . even if we give width.
