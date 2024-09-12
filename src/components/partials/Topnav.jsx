@@ -34,7 +34,7 @@ const Topnav = () => {
     }, [query]);
 
     return (
-        <div className='w-full h-[10vh] relative flex justify-start items-center ml-[15%]'>
+        <div className='w-[80%] h-[10vh] relative flex mx-auto items-center'>
             <i className='text-zinc-400 text-3xl ri-search-line'></i>
             <input
                 type="text"
