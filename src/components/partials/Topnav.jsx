@@ -47,7 +47,7 @@ const Topnav = () => {
                 <i onClick={() => setQuery("")} className='text-zinc-400 text-3xl ri-close-fill'></i>
             )}
 
-            <div className='absolute w-[50%] max-h-[50vh] bg-zinc-200 top-[90%] left-[6%] overflow-auto'>
+            <div className='z-[100] absolute w-[50%] max-h-[50vh] bg-zinc-200 top-[90%] left-[6%] overflow-auto'>
                 {
                     searches.map((s, i) => (
                         <Link
