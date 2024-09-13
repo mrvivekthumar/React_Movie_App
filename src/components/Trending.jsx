@@ -55,6 +55,9 @@ const Trending = () => {
                 <h1 className='text-2xl font-semibold text-zinc-400'>
                     <i onClick={() => navigate(-1)} className=" hover:text-[#6565CD] ri-arrow-left-line"></i>{" "}
                     Trending
+                    <small className='ml-2 text-sm text-zinc-600 '>
+                        ({category})
+                    </small>
                 </h1>
 
                 <div className='flex items-center w-[80%]'>
