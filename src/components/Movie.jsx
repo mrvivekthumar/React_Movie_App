@@ -1,25 +1,23 @@
-import axios from '../utils/axios';
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
-import Topnav from './partials/Topnav';
-import Dropdown from './partials/Dropdown';
+import React, { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import { useNavigate } from 'react-router-dom';
+import axios from '../utils/axios';
+import Loading from './Loading';
+import Dropdown from './partials/Dropdown';
+import Topnav from './partials/Topnav';
+import Cards from './partials/Cards';
 
 const Movie = () => {
-
     document.title = "Movie | Movies ";
-
     const navigate = useNavigate();
-
-    const [category, setCategory] = useState("movie");
+    const [category, setCategory] = useState("now_playing");
     const [movie, setMovie] = useState([]);
     const [page, setPage] = useState(1);
     const [hasMore, setHasMore] = useState(true);
 
-
     const GetMovie = async () => {
         try {
-            const { data } = await axios.get(`${category}/movie?page=${page}`);
+            const { data } = await axios.get(`/movie/${category}?page=${page}`);
             console.log(data);
 
             if (data.results.length > 0) {
@@ -56,13 +54,16 @@ const Movie = () => {
                 <h1 className='text-2xl font-semibold text-zinc-400'>
                     <i onClick={() => navigate(-1)} className=" hover:text-[#6565CD] ri-arrow-left-line"></i>{" "}
                     Movie
+                    <small className='ml-2 text-sm text-zinc-600 '>
+                        ({category})
+                    </small>
                 </h1>
 
                 <div className='flex items-center w-[80%]'>
                     <Topnav />
                     <Dropdown
                         title="category"
-                        options={["movie", "tv"]}
+                        options={["popular", "top_rated", "upcoming", "now_playing"]}
                         func={(e) => setCategory(e.target.value)}
                     />
                 </div>
