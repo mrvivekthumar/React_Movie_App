@@ -12,6 +12,7 @@ const TvDetails = () => {
     const { id } = useParams();
     const { info } = useSelector((state) => state.tv);
     const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(asyncloadtv(id));
         // return () => {
@@ -29,7 +30,7 @@ const TvDetails = () => {
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat"
             }}
-            className=' relative w-screen h-[155vh] px-[10%]'
+            className='relative w-screen h-[200vh] px-[10%]'
         >
             {/* Part 1 Navigation */}
             <nav className='w-full h-[10vh] text-zinc-100 flex items-center gap-10 text-xl'>
@@ -64,7 +65,7 @@ const TvDetails = () => {
                     <h1 className='text-5xl font-black  '>
                         {info.detail.name || info.detail.title || info.detail.original_name || info.detail.original_title}
                         <small className='text-xl font-bold text-zinc-200 '>
-                            ({info.detail.release_date.split("-")[0]})
+                            ({info.detail.first_air_date.split("-")[0]})
                         </small>
                     </h1>
 
@@ -73,7 +74,7 @@ const TvDetails = () => {
                             {(info.detail.vote_average * 10).toFixed()} <sup>%</sup>
                         </span>
                         <h1 className='w-[60px] font-semibold text-2xl leading-6 '>User Score</h1>
-                        <h1>{info.detail.release_date}</h1>
+                        <h1>{info.detail.first_air_date}</h1>
                         <h1>{info.detail.genres.map((g) => g.name).join(",")}</h1>
                         <h1>{info.detail.runtime} min</h1>
                     </div>
@@ -102,8 +103,9 @@ const TvDetails = () => {
                 {info.watchproviders && info.watchproviders.flatrate &&
                     <div className=' flex gap-x-10 items-center text-white'>
                         <h1>Available on Platform</h1>
-                        {info.watchproviders.flatrate.map((w) => (
+                        {info.watchproviders.flatrate.map((w, i) => (
                             <img
+                                key={i}
                                 title={w.provider_name}
                                 className='w-[5vh] h-[5vh] object-cover rounded-md'
                                 src={`https://image.tmdb.org/t/p/original/${w.logo_path}`} alt=""
@@ -115,8 +117,9 @@ const TvDetails = () => {
                 {info.watchproviders && info.watchproviders.rent &&
                     <div className=' flex gap-x-10 items-center text-white'>
                         <h1>Available on Rent</h1>
-                        {info.watchproviders.rent.map((w) => (
+                        {info.watchproviders.rent.map((w, i) => (
                             <img
+                                key={i}
                                 title={w.provider_name}
                                 className='w-[5vh] h-[5vh] object-cover rounded-md'
                                 src={`https://image.tmdb.org/t/p/original/${w.logo_path}`} alt=""
@@ -128,8 +131,9 @@ const TvDetails = () => {
                 {info.watchproviders && info.watchproviders.buy &&
                     <div className=' flex gap-x-10 items-center text-white'>
                         <h1>Available to Buy</h1>
-                        {info.watchproviders.buy.map((w) => (
+                        {info.watchproviders.buy.map((w, i) => (
                             <img
+                                key={i}
                                 title={w.provider_name}
                                 className='w-[5vh] h-[5vh] object-cover rounded-md'
                                 src={`https://image.tmdb.org/t/p/original/${w.logo_path}`} alt=""
@@ -139,7 +143,28 @@ const TvDetails = () => {
                 }
             </div>
 
-            {/* Part 4 Recommendations and similarity */}
+            {/* Part 4 Seasons */}
+            <hr className='mt-10 mb-5 border-none h-[2px] bg-zinc-500 ' />
+            <h1 className='text-3xl font-bold text-white'>Seasons</h1>
+            <div>
+                {info.detail.season.length > 0 ?
+                    info.detail.season.map((s, i) => (
+                        <div>
+                            <img
+                                className='shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] h-[40vh] object-cover'
+                                src={`https://image.tmdb.org/t/p/original/${s.poster_path}`} alt="" />
+
+                            <h1 className='text-xl text-zinc-300 mt-3 font-medium'>
+                                {s.name}
+                            </h1>
+                        </div>
+                    )) :
+                    (<h1 className='text-3xl text-white font-black text-center mt-5 '>Nothing to Show</h1>)
+                }
+            </div>
+
+
+            {/* Part 5 Recommendations and similarity */}
             <hr className='mt-10 mb-5 border-none h-[2px] bg-zinc-500 ' />
             <h1 className='text-3xl font-bold text-white'>Recommendation & Similarity </h1>
             <HorizontalCards data={info.recommendations.length > 0 ? info.recommendations : info.similar} />
