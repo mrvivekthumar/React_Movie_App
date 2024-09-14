@@ -31,7 +31,7 @@ const MovieDetails = () => {
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat"
             }}
-            className='w-screen h-[140vh] px-[10%]'
+            className=' relative w-screen h-[155vh] px-[10%]'
         >
             {/* Part 1 Navigation */}
             <nav className='w-full h-[10vh] text-zinc-100 flex items-center gap-10 text-xl'>
@@ -88,7 +88,7 @@ const MovieDetails = () => {
                     <p>{info.detail.overview}</p>
 
                     <h1 className='text-2xl mb-3 mt-5'>Movie Translation Language</h1>
-                    <p className='mb-10'>{info.translations.join(", ")}</p>
+                    <p className='mb-5'>{info.translations.join(", ")}</p>
 
                     <Link
                         className='p-2 bg-[#6565CD] rounded-lg '
@@ -100,7 +100,7 @@ const MovieDetails = () => {
             </div>
 
             {/* Part 3 Available on platform */}
-            <div className='w-[80%] flex flex-col gap-y-5 mt-10 '>
+            <div className='w-[80%] flex flex-col gap-y-5 mt-5 '>
                 {info.watchproviders && info.watchproviders.flatrate &&
                     <div className=' flex gap-x-10 items-center text-white'>
                         <h1>Available on Platform</h1>
