@@ -11,6 +11,7 @@ export const movieSlice = createSlice({
     reducers: {
 
         loadmovie: (state, action) => {
+            console.log("loadmovie action payload:", action.payload);
             state.info = action.payload;
         },
         removemovie: (state, action) => {

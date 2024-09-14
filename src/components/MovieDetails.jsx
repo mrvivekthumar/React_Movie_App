@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { asyncloadmovie } from '../store/actions/movieActions';
-import { removemovie } from '../store/reducers/movieSlice';
-import { data } from 'autoprefixer';
 import Loading from './Loading';
 import HorizontalCards from './partials/HorizontalCards';
 
@@ -14,12 +12,11 @@ const MovieDetails = () => {
     const { id } = useParams();
     const { info } = useSelector((state) => state.movie);
     const dispatch = useDispatch();
-    console.log(data)
     useEffect(() => {
-        dispatch(asyncloadmovie(id))
-        return () => {
-            dispatch(removemovie());
-        }
+        dispatch(asyncloadmovie(id));
+        // return () => {
+        //     dispatch(removemovie());
+        // }
     }, [id]);
 
     return info ? (
