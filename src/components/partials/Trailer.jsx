@@ -2,6 +2,7 @@ import React from 'react';
 import ReactPlayer from 'react-player';
 import { useSelector } from 'react-redux';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import NotFound from '../NotFound';
 
 const Trailer = () => {
 
@@ -11,7 +12,7 @@ const Trailer = () => {
     const ytVideo = useSelector((state) => state[category].info.videos);
     console.log(ytVideo);
 
-    return (
+    return ytVideo ? (
         <div className='bg-[rgba(0,0,0,.9)] absolute z-[100] top-0 left-0 w-screen h-screen flex items-center justify-center '>
             <Link
                 onClick={() => navigate(-1)}
@@ -23,7 +24,7 @@ const Trailer = () => {
                 url={`http://www.youtube.com/watch?v=4${ytVideo.key}`}
             />
         </div>
-    )
+    ) : <NotFound />
 }
 
 export default Trailer

@@ -1,10 +1,10 @@
-import loader from "/loader.gif";
-const Loading = () => {
+import notFound from "/notFound.gif";
+const NotFound = () => {
     return (
         <div className="w-screen h-screen flex justify-center items-center bg-black">
-            <img className="h-[50%] object-cover" src={loader} alt="" />
+            <img className="h-[50%] object-cover" src={notFound} alt="" />
         </div>
     )
 }
 
-export default Loading
+export default NotFound;

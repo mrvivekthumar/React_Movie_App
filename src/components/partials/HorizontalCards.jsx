@@ -5,7 +5,7 @@ const HorizontalCards = ({ data }) => {
     return (
         <div className='w-[100%] flex overflow-y-hidden mb-5 p-5'>
             {
-                data.map((d, i) => (
+                data.length > 0 ? data.map((d, i) => (
                     <Link
                         to={`/${d.media_type}/details/${d.id}`}
                         key={i}
@@ -27,7 +27,7 @@ const HorizontalCards = ({ data }) => {
                         </div>
 
                     </Link>
-                ))
+                )) : <h1 className='text-3xl text-white font-black text-center mt-5 '>Nothing to Show</h1>
             }
 
         </div>
