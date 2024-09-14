@@ -1,11 +1,10 @@
-import axios from '../utils/axios';
-import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
-import Topnav from './partials/Topnav';
-import Dropdown from './partials/Dropdown';
+import React, { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import Cards from './partials/Cards';
+import { useNavigate } from 'react-router-dom';
+import axios from '../utils/axios';
 import Loading from './Loading';
+import Cards from './partials/Cards';
+import Topnav from './partials/Topnav';
 
 
 const People = () => {
@@ -66,7 +65,7 @@ const People = () => {
                 hasMore={hasMore}
                 loader={<h1>Loading...</h1>}
             >
-                <Cards data={person} title={category} />
+                <Cards data={person} title="person" />
             </InfiniteScroll>
         </div>
     ) : (
