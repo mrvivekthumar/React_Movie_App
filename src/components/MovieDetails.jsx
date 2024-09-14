@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
+import { Link, Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { asyncloadmovie } from '../store/actions/movieActions';
 import { removemovie } from '../store/reducers/movieSlice';
 import { data } from 'autoprefixer';
 import Loading from './Loading';
+import HorizontalCards from './partials/HorizontalCards';
 
 const MovieDetails = () => {
 
@@ -141,11 +142,14 @@ const MovieDetails = () => {
             </div>
 
             {/* Part 4 Recommendations and similarity */}
-            <div>
+            <hr className='mt-10 mb-5 border-none h-[2px] bg-zinc-500 ' />
+            <h1 className='text-3xl font-bold text-white'>Recommendation & Similarity </h1>
+            <HorizontalCards data={info.recommendations.length > 0 ? info.recommendations : info.similar} />
 
-            </div>
+            {/* For Trailer */}
+            <Outlet />
         </div>
-    ) : <Loading />
+    ) : (<Loading />)
 }
 
 export default MovieDetails
