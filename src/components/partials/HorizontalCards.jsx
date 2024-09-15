@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import no_image from "./no_image.jpeg"
 
 const HorizontalCards = ({ data }) => {
     return (
@@ -13,8 +14,10 @@ const HorizontalCards = ({ data }) => {
                     >
                         <img
                             className='w-full h-[55%] object-cover'
-                            src={`https://image.tmdb.org/t/p/original/${d.backdrop_path || d.poster_path}`}
-                            alt=""
+                            src={
+                                d.backdrop_path || d.poster_path ?
+                                    `https://image.tmdb.org/t/p/original/${d.backdrop_path || d.poster_path}` : no_image}
+                            alt=''
                         />
                         <div className='text-white p-3 h-[45%] overflow-y-auto'>
                             <h1 className='text-lg font-semibold'>

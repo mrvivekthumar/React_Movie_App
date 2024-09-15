@@ -163,7 +163,6 @@ const TvDetails = () => {
                 }
             </div>
 
-
             {/* Part 5 Recommendations and similarity */}
             <hr className='mt-10 mb-5 border-none h-[2px] bg-zinc-500 ' />
             <h1 className='text-3xl font-bold text-white'>Recommendation & Similarity </h1>
