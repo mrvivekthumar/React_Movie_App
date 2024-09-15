@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import no_image from "./no_image.jpeg"
 
 const HorizontalCards = ({ data }) => {
     return (

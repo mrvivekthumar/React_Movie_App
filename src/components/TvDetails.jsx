@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
-import { asyncloadtv } from '../store/actions/tvActions';
+import { asyncloadtv, removetv } from '../store/actions/tvActions';
 import Loading from './Loading';
 import HorizontalCards from './partials/HorizontalCards';
 
@@ -12,14 +12,14 @@ const TvDetails = () => {
     const { id } = useParams();
     const { info } = useSelector((state) => state.tv);
     const dispatch = useDispatch();
+    console.log("Info of tv details is :", info)
 
     useEffect(() => {
         dispatch(asyncloadtv(id));
-        // return () => {
-        //     dispatch(removetv());
-        // }
+        return () => {
+            dispatch(removetv());
+        }
     }, [id]);
-
 
     return info ? (
         <div
