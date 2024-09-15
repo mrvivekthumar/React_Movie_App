@@ -4,12 +4,10 @@ const initialState = {
     info: null,
 }
 
-
 export const personSlice = createSlice({
     name: 'person',
     initialState,
     reducers: {
-
         loadperson: (state, action) => {
             state.info = action.payload;
         },

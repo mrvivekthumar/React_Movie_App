@@ -4,7 +4,6 @@ const initialState = {
     info: null,
 }
 
-
 export const tvSlice = createSlice({
     name: 'tv',
     initialState,

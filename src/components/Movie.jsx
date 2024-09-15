@@ -18,7 +18,7 @@ const Movie = () => {
     const GetMovie = async () => {
         try {
             const { data } = await axios.get(`/movie/${category}?page=${page}`);
-            console.log(data);
+            console.log("Movie Detail : ", data);
 
             if (data.results.length > 0) {
                 setMovie((prevState) => [...prevState, ...data.results]);

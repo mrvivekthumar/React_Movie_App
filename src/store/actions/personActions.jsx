@@ -18,7 +18,7 @@ export const asyncloadperson = (id) => async (dispatch, getState) => {
             tvCredits: tvCredits.data
         }
 
-        console.log("person details : ", theultimatedetails);
+        console.log("Person Actions Details : ", theultimatedetails);
         dispatch(loadperson(theultimatedetails));
     } catch (error) {
         console.log("Error : ", error)

@@ -22,6 +22,7 @@ const Trending = () => {
     const GetTrending = async () => {
         try {
             const { data } = await axios.get(`/trending/${category}/${duration}?page=${page}`);
+            console.log("Trending Detail : ", data);
 
             if (data.results.length > 0) {
                 setTrending((prevState) => [...prevState, ...data.results]);
@@ -29,7 +30,6 @@ const Trending = () => {
             } else {
                 setHasMore(false);
             }
-            console.log(data.results);
         } catch (error) {
             console.log("Error : ", error);
         }

@@ -2,21 +2,18 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { asyncloadperson, removeperson } from '../store/actions/personActions';
+import Loading from './Loading';
 import Dropdown from './partials/Dropdown';
 import HorizontalCards from './partials/HorizontalCards';
-import Loading from './Loading';
 
 const PersonDetails = () => {
 
     const { pathname } = useLocation();
     const navigate = useNavigate();
     const { id } = useParams();
-    console.log("id is :", id)
-    const { info } = useSelector((state) => state);
-    console.log("info is :", info);
+    const { info } = useSelector((state) => state.person);
     const dispatch = useDispatch();
     const [category, setCategory] = useState("movie");
-
 
     useEffect(() => {
         dispatch(asyncloadperson(id));
@@ -25,9 +22,8 @@ const PersonDetails = () => {
         }
     }, [id]);
 
-    console.log("first")
     return info ? (
-        < div className='px-[10%] w-screen bg-[#1F1E24] h-[150vh]' >
+        <div className='px-[10%] w-screen bg-[#1F1E24] h-[170vh]' >
             {/* Part 1 Navigation */}
             < nav className='w-full h-[10vh] text-zinc-100 flex items-center gap-10 text-xl' >
                 <Link
@@ -46,8 +42,7 @@ const PersonDetails = () => {
                     />
                     <hr className='mt-10 mb-5 border-none h-[2px] bg-zinc-500 ' />
                     {/* Social media links */}
-                    <div>
-
+                    <div className='text-2xl text-zinc-200 gap-x-5 flex '>
                         <a
                             target='_blank'
                             href={`https:/www.wikidata.org/wiki/${info.externalid.wikidata_id}`}>
@@ -90,8 +85,6 @@ const PersonDetails = () => {
 
                     <h1 className='text-lg text-zinc-400 font-semibold mt-5 '>Also Known As</h1>
                     <h1 className='text-zinc-400'>{info.detail.also_known_as.join(",")}</h1>
-
-
                 </div>
 
                 {/* part 3 right details and information */}
@@ -110,9 +103,9 @@ const PersonDetails = () => {
                     </div>
                     <div className='list-disc text-zinc-400 w-full h-[50vh] mt-5 overflow-x-hidden overflow-y-auto shadow-xl shadow-[rgba(255,255,255,.3)] border-2 border-zinc-700 p-5 '>
                         {
-                            info[category + "credits"].cast.map((c, i) => (
-                                <li className='hover:text-white p-5 rounded hover:bg-[#19191d] duration-300 cursor-pointer  '>
-                                    <Link key={i} to={`/${category}/details/${c.id}`} className=' '>
+                            info[category + "Credits"].cast.map((c, i) => (
+                                <li key={i} className='hover:text-white p-5 rounded hover:bg-[#19191d] duration-300 cursor-pointer  '>
+                                    <Link to={`/${category}/details/${c.id}`} className=' '>
                                         <span>
                                             {
                                                 c.name || c.title || c.original_name || c.original_title

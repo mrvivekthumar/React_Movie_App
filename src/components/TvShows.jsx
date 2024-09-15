@@ -19,7 +19,7 @@ const TvShows = () => {
     const GetTv = async () => {
         try {
             const { data } = await axios.get(`/tv/${category}?page=${page}`);
-            console.log(data);
+            console.log("TvShows Details : ", data);
 
             if (data.results.length > 0) {
                 setTv((prevState) => [...prevState, ...data.results]);
