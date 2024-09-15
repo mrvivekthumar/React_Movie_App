@@ -4,14 +4,11 @@ const initialState = {
     info: null,
 }
 
-
 export const movieSlice = createSlice({
     name: 'movie',
     initialState,
     reducers: {
-
         loadmovie: (state, action) => {
-            console.log("loadmovie action payload:", action.payload);
             state.info = action.payload;
         },
         removemovie: (state, action) => {

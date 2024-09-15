@@ -12,8 +12,6 @@ const TvDetails = () => {
     const { id } = useParams();
     const { info } = useSelector((state) => state.tv);
     const dispatch = useDispatch();
-    console.log("Info of tv details is :", info)
-
     useEffect(() => {
         dispatch(asyncloadtv(id));
         return () => {
@@ -146,12 +144,12 @@ const TvDetails = () => {
             {/* Part 4 Seasons */}
             <hr className='mt-10 mb-5 border-none h-[2px] bg-zinc-500 ' />
             <h1 className='text-3xl font-bold text-white'>Seasons</h1>
-            <div>
-                {info.detail.season.length > 0 ?
-                    info.detail.season.map((s, i) => (
-                        <div>
+            <div className='w-[100%] flex overflow-y-hidden mb-5 p-5 '>
+                {info.detail.seasons.length > 0 ?
+                    info.detail.seasons.map((s, i) => (
+                        <div key={i} className='w-[15vh] mr-[8%] '>
                             <img
-                                className='shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] h-[40vh] object-cover'
+                                className='shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] min-w-[12vw] h-[32vh] object-cover'
                                 src={`https://image.tmdb.org/t/p/original/${s.poster_path}`} alt="" />
 
                             <h1 className='text-xl text-zinc-300 mt-3 font-medium'>

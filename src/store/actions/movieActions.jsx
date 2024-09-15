@@ -22,7 +22,7 @@ export const asyncloadmovie = (id) => async (dispatch, getState) => {
             watchproviders: watchproviders.data.results.IN,
 
         }
-        console.log(theultimatedetails);
+        console.log("Movie Action Details :", theultimatedetails);
         dispatch(loadmovie(theultimatedetails));
     } catch (error) {
         console.log("Error : ", error)
