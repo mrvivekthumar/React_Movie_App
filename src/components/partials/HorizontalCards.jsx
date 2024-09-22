@@ -15,7 +15,7 @@ const HorizontalCards = ({ data }) => {
                             className='w-full h-[55%] object-cover'
                             src={
                                 d.backdrop_path || d.poster_path ?
-                                    `https://image.tmdb.org/t/p/original/${d.backdrop_path || d.poster_path}` : `public/no_image.jpeg`
+                                    `https://image.tmdb.org/t/p/original/${d.backdrop_path || d.poster_path}` : `/no_image.jpeg`
                             }
                             alt=''
                         />
