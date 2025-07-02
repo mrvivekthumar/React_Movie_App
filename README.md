@@ -1,12 +1,10 @@
 <div align="center">
 
 <!-- Image Gallery -->
-<p>
-  <img src="assets/IMG1.png" alt="Screenshot 1" width="100%" />
-  <img src="assets/IMG2.png" alt="Screenshot 2" width="100%" />
-  <img src="assets/IMG3.png" alt="Screenshot 3" width="100%" />
-  <img src="assets/IMG4.png" alt="Screenshot 4" width="100%/>
-</p>
+<img src="assets/IMG1.png" alt="Screenshot 1" width="100%" />
+<img src="assets/IMG2.png" alt="Screenshot 2" width="100%" />
+<img src="assets/IMG3.png" alt="Screenshot 3" width="100%" />
+<img src="assets/IMG4.png" alt="Screenshot 4" width="100%" />
 
 <h1>🎬 Movie App React</h1>
 <p>A modern, responsive movie and TV show web application built with React, Redux Toolkit, and Tailwind CSS. Browse trending movies, TV shows, view details, and more!</p>
@@ -27,20 +25,18 @@
 
 ## 🖼️ More Screenshots
 
-<p>
-  <img src="assets/IMG5.png" alt="Screenshot 5" height="180" style="margin: 0 8px; border-radius: 8px;"/>
-  <img src="assets/IMG6.png" alt="Screenshot 6" height="180" style="margin: 0 8px; border-radius: 8px;"/>
-  <img src="assets/IMG7.png" alt="Screenshot 7" height="180" style="margin: 0 8px; border-radius: 8px;"/>
-  <img src="assets/IMG8.png" alt="Screenshot 8" height="180" style="margin: 0 8px; border-radius: 8px;"/>
-  <img src="assets/IMG9.png" alt="Screenshot 9" height="180" style="margin: 0 8px; border-radius: 8px;"/>
-  <img src="assets/IMG10.png" alt="Screenshot 10" height="180" style="margin: 0 8px; border-radius: 8px;"/>
-  <img src="assets/IMG11.png" alt="Screenshot 11" height="180" style="margin: 0 8px; border-radius: 8px;"/>
-  <img src="assets/IMG12.png" alt="Screenshot 12" height="180" style="margin: 0 8px; border-radius: 8px;"/>
-  <img src="assets/IMG13.png" alt="Screenshot 13" height="180" style="margin: 0 8px; border-radius: 8px;"/>
-  <img src="assets/IMG14.png" alt="Screenshot 14" height="180" style="margin: 0 8px; border-radius: 8px;"/>
-  <img src="assets/IMG15.png" alt="Screenshot 15" height="180" style="margin: 0 8px; border-radius: 8px;"/>
-  <img src="assets/IMG16.png" alt="Screenshot 16" height="180" style="margin: 0 8px; border-radius: 8px;"/>
-</p>
+<img src="assets/IMG5.png" alt="Screenshot 5" width="100%" />
+<img src="assets/IMG6.png" alt="Screenshot 6" width="100%" />
+<img src="assets/IMG7.png" alt="Screenshot 7" width="100%" />
+<img src="assets/IMG8.png" alt="Screenshot 8" width="100%" />
+<img src="assets/IMG9.png" alt="Screenshot 9" width="100%" />
+<img src="assets/IMG10.png" alt="Screenshot 10" width="100%" />
+<img src="assets/IMG11.png" alt="Screenshot 11" width="100%" />
+<img src="assets/IMG12.png" alt="Screenshot 12" width="100%" />
+<img src="assets/IMG13.png" alt="Screenshot 13" width="100%" />
+<img src="assets/IMG14.png" alt="Screenshot 14" width="100%" />
+<img src="assets/IMG15.png" alt="Screenshot 15" width="100%" />
+<img src="assets/IMG16.png" alt="Screenshot 16" width="100%" />
 
 ---
 
@@ -95,9 +91,13 @@ MOVIEAPPREACT/
     npm run dev
     ```
 
-4. **copy you api key .env:**
+4. **copy you .env.local to .env:**
+    ```bash
+    npm run dev
+    ```
 
 5. **Open** [http://localhost:5173](http://localhost:5173) **in your browser.use VPN**
+
 ---
 
 ## 🌐 API & Configuration
