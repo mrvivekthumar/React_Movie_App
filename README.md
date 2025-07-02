@@ -2,10 +2,10 @@
 
 <!-- Image Gallery -->
 <p>
-  <img src="assets/IMG1.png" alt="Screenshot 1" height="220" style="margin: 0 10px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);"/>
-  <img src="assets/IMG2.png" alt="Screenshot 2" height="220" style="margin: 0 10px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);"/>
-  <img src="assets/IMG3.png" alt="Screenshot 3" height="220" style="margin: 0 10px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);"/>
-  <img src="assets/IMG4.png" alt="Screenshot 4" height="220" style="margin: 0 10px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);"/>
+  <img src="assets/IMG1.png" alt="Screenshot 1" width="100%" />
+  <img src="assets/IMG2.png" alt="Screenshot 2" width="100%" />
+  <img src="assets/IMG3.png" alt="Screenshot 3" width="100%" />
+  <img src="assets/IMG4.png" alt="Screenshot 4" width="100%/>
 </p>
 
 <h1>🎬 Movie App React</h1>
